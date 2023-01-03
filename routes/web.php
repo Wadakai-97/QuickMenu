@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// ホーム
+Route::get('/home', [HomeController::class, 'index']);
+
+// メニュー
+Route::controller(MenuController::class)->group(function() {
+    Route::prefix('/menu')->group(function() {
+        Route::get('/list', 'list')->name('menu.list');
+        Route::post('/search', 'search')->name('menu.search');
+        Route::get('/create', 'index')->name('menu.create');
+        Route::post('/store', 'create')->name('menu.store');
+    });
+});
+
+Auth::routes();
