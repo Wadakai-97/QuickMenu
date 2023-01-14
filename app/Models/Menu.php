@@ -58,6 +58,16 @@ class Menu extends Model
         ]);
     }
 
+    /**
+     * メニュー情報を削除する。
+     *
+     * @param string $id メニューID
+     * @return bool
+     */
+    public static function dataDestroy($id) {
+        return Menu::destroy($id);
+    }
+
 
     // 時間帯 完全一致
     public function scopeWhereTimezone($query, $request) {

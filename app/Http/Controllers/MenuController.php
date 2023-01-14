@@ -42,6 +42,25 @@ class MenuController extends Controller
     }
 
     /**
+     * 商品を削除する。
+     * @param string $id  メニューID
+     * @return bool
+     */
+    public function destroy($id) {
+        $delete_result = Menu::dataDestroy($id);
+
+        if(!empty($delete_result)) {
+            $message_key = config('status.MESSAGE_KEY_SUCCESS');
+            $flash_message = config('message.DESTROY_SUCCESS');
+        } else {
+            $message_key = config('status.MESSAGE_KEY_FAILED');
+            $flash_message = config('message.DESTROY_FAILED');
+        }
+
+        return redirect()->route('menu.list')->with($message_key, $flash_message);
+    }
+
+    /**
      * 入力情報を登録する。
      *
      * @param array $request 入力情報

@@ -30,6 +30,7 @@ Route::controller(MenuController::class)->group(function() {
         Route::post('/search', 'search')->name('menu.search');
         Route::get('/create', 'index')->name('menu.create');
         Route::post('/store', 'create')->name('menu.store');
+        Route::post('/destroy/{id}', 'destroy')->name('menu.destroy');
     });
 });
 

@@ -4,6 +4,17 @@
 @section('content')
 <h1 class="mb-5">メニューリスト</h1>
 
+@if (session('success_message'))
+    <div class="alert alert-success text-center">
+        {{ session('success_message') }}
+    </div>
+@endif
+@if (session('failed_message'))
+    <div class="alert alert-danger text-center">
+        {{ session('failed_message') }}
+    </div>
+@endif
+
 <form class="row g-3 mb-5" action="{{ route('menu.search') }}" method="POST">
     @csrf
     <div class="col-md-4">
@@ -51,11 +62,15 @@
             <td>{{ $menu->category }}</td>
             <td>{{ $menu->dish_name }}</td>
             <td><a class="btn btn-primary" href="#" role="button">詳細</a></td>
-            <td><a class="btn btn-primary" href="#" role="button">削除</a></td>
+            <td>
+                <form action="{{ route('menu.destroy', ['id' => $menu->id]) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">削除</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
 </table>
-
 {{ $menus->links() }}
 @endsection
