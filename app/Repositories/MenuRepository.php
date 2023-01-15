@@ -30,6 +30,16 @@ class MenuRepository implements MenuRepositoryInterface
     }
 
     /**
+     * メニュー単体情報を取得する。
+     * @param string $id メニューID
+     * @return array|null
+     */
+    public function detail($id)
+    {
+        return Menu::find($id);
+    }
+
+    /**
      * メニューを登録する。
      *
      * @param array $request 入力情報
@@ -52,7 +62,7 @@ class MenuRepository implements MenuRepositoryInterface
      * @param string $id メニューID
      * @return bool
      */
-    public function destory($id)
+    public function destroy($id)
     {
         return Menu::destroy($id);
     }

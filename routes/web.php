@@ -28,6 +28,7 @@ Route::controller(MenuController::class)->group(function() {
     Route::prefix('/menu')->group(function() {
         Route::get('/list', 'getList')->name('menu.list');
         Route::post('/search', 'search')->name('menu.search');
+        Route::get('/detail/{id}', 'detail')->name('menu.detail');
         Route::get('/create', 'index')->name('menu.create');
         Route::post('/store', 'create')->name('menu.store');
         Route::post('/destroy/{id}', 'destroy')->name('menu.destroy');

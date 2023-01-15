@@ -7,6 +7,9 @@ interface MenuRepositoryInterface
     // メニュー一覧を取得する。
     public function getList();
 
+    // メニュー 。
+    public function detail($id);
+
     // メニューを検索条件で絞り込んで取得する。
     public function find($request);
 
@@ -14,5 +17,5 @@ interface MenuRepositoryInterface
     public function create($request);
 
     // メニューを削除する。
-    public function destory($id);
+    public function destroy($id);
 }

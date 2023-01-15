@@ -61,7 +61,7 @@
             <td>{{ $menu->timezone }}</td>
             <td>{{ $menu->category }}</td>
             <td>{{ $menu->dish_name }}</td>
-            <td><a class="btn btn-primary" href="#" role="button">詳細</a></td>
+            <td><a class="btn btn-primary" href="{{ route('menu.detail', ['id' => $menu->id]) }}" role="button">詳細</a></td>
             <td>
                 <form action="{{ route('menu.destroy', ['id' => $menu->id]) }}" method="POST">
                     @csrf

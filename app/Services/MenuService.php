@@ -22,13 +22,18 @@ class MenuService
         return $this->menuRepository->find($request);
     }
 
+    public function detail($id)
+    {
+        return $this->menuRepository->detail($id);
+    }
+
     public function create($request)
     {
         return $this->menuRepository->create($request);
     }
 
-    public function destory($id)
+    public function destroy($id)
     {
-        return $this->menuRepository->destory($id);
+        return $this->menuRepository->destroy($id);
     }
 }
