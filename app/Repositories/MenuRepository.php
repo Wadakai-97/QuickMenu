@@ -52,7 +52,7 @@ class MenuRepository implements MenuRepositoryInterface
      * @param string $id メニューID
      * @return bool
      */
-    public function destory($id)
+    public function destroy($id)
     {
         return Menu::destroy($id);
     }

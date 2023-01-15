@@ -14,5 +14,5 @@ interface MenuRepositoryInterface
     public function create($request);
 
     // メニューを削除する。
-    public function destory($id);
+    public function destroy($id);
 }

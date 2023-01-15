@@ -27,8 +27,8 @@ class MenuService
         return $this->menuRepository->create($request);
     }
 
-    public function destory($id)
+    public function destroy($id)
     {
-        return $this->menuRepository->destory($id);
+        return $this->menuRepository->destroy($id);
     }
 }
