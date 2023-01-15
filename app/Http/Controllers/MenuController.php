@@ -63,6 +63,7 @@ class MenuController extends Controller
             $save_result = $this->menuService->create($request);
             $message_key = $this->judgementService->saveResultKey($save_result);
             $flash_message = $this->judgementService->saveResultMessage($save_result);
+            $request->session()->regenerateToken(); 
 
             return redirect()->route(config('route.menu.create'))->with($message_key, $flash_message);
         } catch (Throwable $e) {
