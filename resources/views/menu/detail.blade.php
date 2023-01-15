@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <th>作成日</th>
-            <td>{{ $menu->deleted_at }}</td>
+            <td>{{ $menu->created_at }}</td>
         </tr>
         <tr>
             <th>更新日</th>
