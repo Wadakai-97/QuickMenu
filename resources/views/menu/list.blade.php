@@ -38,7 +38,7 @@
     <div class="col-md-4">
         <label for="validationDefaultUsername" class="form-label">料理名</label>
         <div class="input-group">
-        <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2">
+        <input type="text" class="form-control" name="dish_name" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2">
         </div>
     </div>
     <div class="col-12">

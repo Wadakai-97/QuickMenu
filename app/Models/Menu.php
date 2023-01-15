@@ -21,54 +21,6 @@ class Menu extends Model
         'updated_at',
     ];
 
-    /**
-     * メニュー一覧を取得する。
-     * @return array|null
-     */
-    public static function getList() {
-        return Menu::paginate(10);
-    }
-
-    /**
-     * 検索条件からメニュー情報を絞り込む。
-     * @param array $request 検索条件
-     * @return array|null
-     */
-    public static function search($request) {
-        $query = Menu::query();
-        return $query->whereTimezone($query, Arr::pluck($request, 'timezone'))
-                        ->whereCategory($query, $request)
-                        ->whereDishName($query, $request)
-                        ->get();
-    }
-
-    /**
-     * 入力情報を登録する。
-     *
-     * @param array $request 入力情報
-     * @return bool
-     */
-    public static function store($request) {
-        return Menu::create([
-            "timezone" => $request['timezone'],
-            "category" => $request['category'],
-            "dish_name" => $request['dish_name'],
-            "memo" => $request['memo'],
-            "url" => $request['url']
-        ]);
-    }
-
-    /**
-     * メニュー情報を削除する。
-     *
-     * @param string $id メニューID
-     * @return bool
-     */
-    public static function dataDestroy($id) {
-        return Menu::destroy($id);
-    }
-
-
     // 時間帯 完全一致
     public function scopeWhereTimezone($query, $request) {
         $timezone = $request->timezone;

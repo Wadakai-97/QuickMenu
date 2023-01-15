@@ -1,8 +1,12 @@
 <?php
 
 return [
-    'STORE_SUCCESS' => '登録に成功しました。',
-    'STORE_FAILED' => '登録に失敗しました。',
-    'DESTROY_SUCCESS' => '削除に成功しました。',
-    'DESTROY_FAILED' => '削除に失敗しました。',
+    'save' => [
+        'success' => '登録に成功しました。',
+        'failed' => '登録に失敗しました。',
+    ],
+    'delete' => [
+        'success' => '削除に成功しました。',
+        'failed' => '削除に失敗しました。',
+    ],
 ];
