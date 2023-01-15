@@ -21,7 +21,7 @@ class JudgementService
     }
 
     public function deleteResultKey($result) {
-        if($delete_result >= config('status.db.delete.success')) {
+        if($result >= config('status.db.delete.success')) {
             return config('status.message.key.success');
         } else {
             return config('status.message.key.failed');
@@ -29,7 +29,7 @@ class JudgementService
     }
 
     public function deleteResultMessage($result) {
-        if($delete_result >= config('status.db.delete.success')) {
+        if($result >= config('status.db.delete.success')) {
             return config('message.delete.success');
         } else {
             return config('message.delete.success');
