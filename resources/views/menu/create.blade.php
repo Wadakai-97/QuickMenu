@@ -4,16 +4,8 @@
 @section('content')
 <h1 class='mb-5'>レシピ登録</h1>
 
-@if (session('success_message'))
-    <div class="alert alert-success text-center">
-        {{ session('success_message') }}
-    </div>
-@endif
-@if (session('failed_message'))
-    <div class="alert alert-danger text-center">
-        {{ session('failed_message') }}
-    </div>
-@endif
+@include('partials.session.success_message')
+@include('partials.session.failed_message')
 
 <form action="{{ route('menu.store') }}" method="POST">
     @csrf
