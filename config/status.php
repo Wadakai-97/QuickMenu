@@ -1,6 +1,18 @@
 <?php
 
 return [
-    'MESSAGE_KEY_SUCCESS' => 'success_message',
-    'MESSAGE_KEY_FAILED' => 'failed_message',
+
+    'db' => [
+        'delete' => [
+            'success' => 1,
+            'failed' => 0
+        ],
+    ],
+
+    'message' => [
+        'key' => [
+            'success' => 'success_message',
+            'failed' => 'failed_message',
+        ],
+    ],
 ];
