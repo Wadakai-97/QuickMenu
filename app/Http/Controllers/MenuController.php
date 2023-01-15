@@ -37,6 +37,16 @@ class MenuController extends Controller
     }
 
     /**
+     * メニュー単体情報を取得する。
+     * @param string $id メニューID
+     * @return array|null
+     */
+    public function detail($id) {
+        $menu = $this->menuService->detail($id);
+        return view(config('route.menu.detail'), compact('menu'));
+    }
+
+    /**
      * メニュー登録画面を表示する。
      */
     public function index() {

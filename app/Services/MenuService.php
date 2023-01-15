@@ -22,6 +22,11 @@ class MenuService
         return $this->menuRepository->find($request);
     }
 
+    public function detail($id)
+    {
+        return $this->menuRepository->detail($id);
+    }
+
     public function create($request)
     {
         return $this->menuRepository->create($request);
