@@ -46,7 +46,8 @@
     </div>
 </form>
 
-<table class="table table-light table-striped">
+
+<table class="table table-sm table-light table-striped text-center">
     <thead>
         <tr class="table-dark">
             <th>時間帯</th>
@@ -61,11 +62,11 @@
             <td>{{ $menu->timezone }}</td>
             <td>{{ $menu->category }}</td>
             <td>{{ $menu->dish_name }}</td>
-            <td><a class="btn btn-primary" href="{{ route('menu.detail', ['id' => $menu->id]) }}" role="button">詳細</a></td>
+            <td><a class="btn btn-primary btn-sm" href="{{ route('menu.detail', ['id' => $menu->id]) }}" role="button">詳細</a></td>
             <td>
                 <form action="{{ route('menu.destroy', ['id' => $menu->id]) }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-danger">削除</button>
+                    <button type="submit" class="btn btn-danger btn-sm">削除</button>
                 </form>
             </td>
         </tr>
