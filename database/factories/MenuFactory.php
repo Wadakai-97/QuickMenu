@@ -18,11 +18,12 @@ class MenuFactory extends Factory
     {
         $timezone = ['朝食', '昼食', '夕食'];
         $category = ['和食', '洋食', '中華', 'アジア', 'カレー', '焼肉', '鍋', 'その他'];
+        $dish_name = ['カレー', 'ラーメン', 'チキン', 'パスタ'];
 
         return [
             'timezone' => $this->faker->randomElement($timezone),
             'category' => $this->faker->randomElement($category),
-            'dish_name' => $this->faker->word(),
+            'dish_name' => $this->faker->randomElement($dish_name),
             'memo' => $this->faker->realText(),
             'url' => $this->faker->url(),
         ];

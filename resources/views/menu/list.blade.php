@@ -2,8 +2,6 @@
 
 @section('title', 'RecipeCreate')
 @section('content')
-<h1 class="mb-5">メニューリスト</h1>
-
 @if (session('success_message'))
     <div class="alert alert-success text-center">
         {{ session('success_message') }}
@@ -41,15 +39,15 @@
         <input type="text" class="form-control" name="dish_name" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2">
         </div>
     </div>
-    <div class="col-12">
+    <div class="col-12 text-end">
         <button class="btn btn-primary" type="submit">検索</button>
     </div>
 </form>
 
 
-<table class="table table-sm table-light table-striped text-center">
+<table class="table table-sm text-center">
     <thead>
-        <tr class="table-dark">
+        <tr class="table-secondary">
             <th>時間帯</th>
             <th>分類</th>
             <th>料理名</th>
@@ -73,5 +71,8 @@
         @endforeach
     </tbody>
 </table>
-{{ $menus->links() }}
+
+<div class="d-flex justify-content-center pt-3">
+    {{ $menus->links() }}
+</div>
 @endsection
