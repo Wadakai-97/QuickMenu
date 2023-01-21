@@ -26,6 +26,23 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+                            <div class="col-md-6">
+                                <select class="form-select" name="role" aria-label="Default select example" autofocus>
+                                    <option disabled selected>未選択</option>
+                                    @foreach (UserConsts::ROLE_LIST as $key => $role)
+                                    <option value="{{ $key }}" @if(old('role') === $key) selected @endif>{{ $role }}</option>
+                                    @endforeach
+                                </select>
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
