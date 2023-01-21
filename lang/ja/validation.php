@@ -146,6 +146,7 @@ return [
     */
 
     'attributes' => [
+        'role' => '役職',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
     ],
