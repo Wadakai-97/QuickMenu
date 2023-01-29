@@ -2,7 +2,7 @@
 
 namespace App\Consts;
 
-class RecipeConsts
+class MenuConsts
 {
     // 時間帯
     public const TIMEZONE_01 = "朝食";

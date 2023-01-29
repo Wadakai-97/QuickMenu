@@ -14,7 +14,7 @@
         <span class="badge bg-danger">必須</span>
         <select class="form-select" name="timezone" id="TimeZone" aria-label="Default select example">
             <option disabled selected>未選択</option>
-            @foreach (RecipeConsts::TIMEZONE_LIST as $key => $timezone)
+            @foreach (MenuConsts::TIMEZONE_LIST as $key => $timezone)
             <option value="{{ $timezone }}" @if(old('timezone') === $timezone) selected @endif>{{ $timezone }}</option>
             @endforeach
         </select>
@@ -25,7 +25,7 @@
         <span class="badge bg-danger">必須</span>
         <select class="form-select" name="category" id="Category" aria-label="Default select example">
             <option disabled selected>未選択</option>
-            @foreach (RecipeConsts::CATEGORY_LIST as $key => $category)
+            @foreach (MenuConsts::CATEGORY_LIST as $key => $category)
             <option value="{{ $category }}" @if(old('category') === $category) selected @endif>{{ $category }}</option>
             @endforeach
         </select>

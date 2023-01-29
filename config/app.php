@@ -209,7 +209,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'RecipeConsts' => App\Consts\RecipeConsts::class,
+        'MenuConsts' => App\Consts\MenuConsts::class,
         'UserConsts' => App\Consts\UserConsts::class,
     ])->toArray(),
 
