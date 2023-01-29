@@ -32,6 +32,7 @@ Route::controller(MenuController::class)->group(function() {
         Route::get('/create', 'index')->name('menu.create');
         Route::post('/store', 'create')->name('menu.store');
         Route::post('/destroy/{id}', 'destroy')->name('menu.destroy');
+        Route::get('/csv_download', 'csvDownload')->name('menu.csv_download');
     });
 });
 
